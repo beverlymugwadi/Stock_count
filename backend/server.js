@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 
 // CORS Configuration
-const allowedOrigins = process.env.CORS_ORIGINS 
+const allowedOrigins = process.env.CORS_ORIGINS
     ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim())
     : ['http://localhost:3000'];
 
@@ -17,7 +17,7 @@ const corsOptions = {
     origin: function (origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        
+
         if (process.env.NODE_ENV === 'production') {
             // In production, strictly check against allowed origins
             if (allowedOrigins.indexOf(origin) !== -1) {
@@ -37,7 +37,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-const io = new Server(server, { 
+const io = new Server(server, {
     cors: corsOptions
 });
 

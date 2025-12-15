@@ -1,6 +1,6 @@
 // Farmer-Vendor Marketplace API (backend-backed)
 (function () {
-    const API_BASE = 'http://localhost:5000/api';
+    const API_BASE = 'http://localhost:5001/api';
     const CURRENT_USER_KEY = 'fvm_current_user';
 
     const readCurrentUser = () => {
@@ -18,16 +18,16 @@
 
     const request = async (path, options = {}) => {
         const user = readCurrentUser();
-        const headers = { 
-            'Content-Type': 'application/json', 
+        const headers = {
+            'Content-Type': 'application/json',
             ...(options.headers || {})
         };
-        
+
         // Add authorization token if user is logged in
         if (user && user.token) {
             headers['Authorization'] = `Bearer ${user.token}`;
         }
-        
+
         const res = await fetch(`${API_BASE}${path}`, {
             headers,
             ...options
