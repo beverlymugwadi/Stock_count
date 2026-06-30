@@ -1,0 +1,17 @@
+[
+  {
+    "docPath": "docs/backend/middleware/auth.md",
+    "sources": [
+      {
+        "repoFullName": "beverlymugwadi/Stock_count",
+        "path": "backend/middleware/auth.js",
+        "branch": "main",
+        "commitSha": "361ffbaa264ddc8e133d2ba7a0238d1121ba9955"
+      }
+    ],
+    "generatedAt": "2026-06-30T15:23:49.224Z",
+    "generator": "ADGVC",
+    "authorLogin": "beverlymugwadi",
+    "version": 2
+  }
+]
